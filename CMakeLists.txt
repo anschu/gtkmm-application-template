@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.2)
+
+project(GtkmmAppTemplate)
+
+option(USE_CCACHE "Want to use 'ccache'?" YES)
+option(USE_CLANG_TIDY "Want to use 'clang-tidy'?" YES)
+option(USE_IWYU "Want to use 'include-what-you-use'?" YES)
+
+if(USE_CCACHE)
+    find_program(CCACHE NAMES ccache sccache REQUIRED)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ${CCACHE})
+endif()
+
+if(USE_CLANG_TIDY)
+    find_program(CLANG_TIDY NAMES clang-tidy REQUIRED)
+    set(CLANG_TIDY_RUN ${CLANG_TIDY} "-checks=-*,bugprone-*,cppcoreguidelines-*")
+endif()
+
+if(USE_IWYU)
+    find_program(IWYU NAMES include-what-you-use iwyu)
+endif()
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
+add_library(GTKMM INTERFACE IMPORTED)
+set_property(TARGET GTKMM PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${GTKMM_INCLUDE_DIRS})
+set_property(TARGET GTKMM PROPERTY INTERFACE_LINK_LIBRARIES ${GTKMM_LIBRARIES})
+set_property(TARGET GTKMM PROPERTY INTERFACE_COMPILE_OPTIONS ${GTKMM_CFLAGS_OTHER})
+
+add_subdirectory(src)
+add_subdirectory(test)
