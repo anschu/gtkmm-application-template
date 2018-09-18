@@ -1,1 +1,1 @@
-# GtkmmAppTemplate
+# Gtkmm-Application-Template
