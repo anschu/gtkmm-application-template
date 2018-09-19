@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
-
 project(GtkmmAppTemplate)
 
-option(USE_CCACHE "Want to use 'ccache'?" YES)
-option(USE_CLANG_TIDY "Want to use 'clang-tidy'?" YES)
-option(USE_IWYU "Want to use 'include-what-you-use'?" YES)
+list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
+
+option(USE_CCACHE "Want to use 'ccache'?" NO)
+option(USE_CLANG_TIDY "Want to use 'clang-tidy'?" NO)
+option(USE_IWYU "Want to use 'include-what-you-use'?" NO)
 
 if(USE_CCACHE)
     find_program(CCACHE NAMES ccache sccache REQUIRED)
@@ -19,6 +20,8 @@ endif()
 if(USE_IWYU)
     find_program(IWYU NAMES include-what-you-use iwyu)
 endif()
+
+include(GlibUtils)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
