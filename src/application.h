@@ -17,6 +17,7 @@ class Application : public Gtk::Application {
     Window* create_window();
 
     void on_activate() override;
+    void on_startup() override;
     void on_hide_window(Gtk::Window* window);
 };
 

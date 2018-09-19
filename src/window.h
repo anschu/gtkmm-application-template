@@ -3,6 +3,7 @@
 
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
+#include <giomm/settings.h>
 
 class Window : public Gtk::ApplicationWindow {
     public:
@@ -13,6 +14,7 @@ class Window : public Gtk::ApplicationWindow {
 
     private:
     Glib::RefPtr<Gtk::Builder> builder;
+    Glib::RefPtr<Gio::Settings> settings;
 };
 
 #endif  // WINDOW_H
