@@ -1,0 +1,14 @@
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+#include <string>
+
+std::string getGeneratedFilesDirectory() {
+    return "@GENERATED_FILES_DIR@";
+}
+
+std::string getGeneratedGSchemaDirectory() {
+    return "@GENERATED_FILES_DIR@/glib-2.0/schemas/";
+}
+
+#endif  // CONFIG_H_IN

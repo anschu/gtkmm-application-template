@@ -1,9 +1,11 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include <giomm/settings.h>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
-#include <giomm/settings.h>
+#include <gtkmm/headerbar.h>
+#include <gtkmm/label.h>
 
 class Window : public Gtk::ApplicationWindow {
     public:
@@ -13,8 +15,13 @@ class Window : public Gtk::ApplicationWindow {
     static Window* create();
 
     private:
-    Glib::RefPtr<Gtk::Builder> builder;
+    Glib::RefPtr<Gtk::Builder>  builder;
     Glib::RefPtr<Gio::Settings> settings;
+    Gtk::HeaderBar*             headerBar;
+    Gtk::Label*                 firstLabel;
+    Gtk::Label*                 secondLabel;
+
+    void setHeaderBar();
 };
 
 #endif  // WINDOW_H
