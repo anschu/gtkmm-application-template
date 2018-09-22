@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gtkmm/template">
+    <file preprocess="xml-stripblanks">ui/window.glade</file>
+    <file preprocess="xml-stripblanks">ui/headerbar.glade</file>
+    <file preprocess="xml-stripblanks">ui/preferences.glade</file>
+    <file preprocess="xml-stripblanks">ui/menu.glade</file>
+    <file>icons/48x48/icon.png</file>
+  </gresource>
+</gresources>

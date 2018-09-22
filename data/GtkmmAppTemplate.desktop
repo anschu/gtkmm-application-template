@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=GtkmmApplicationTemplate
+GenericName=Template
+Comment=Simple Gtkmm Application
+Icon=gtkmmtemp
+StartupNotify=true
+Exec=@bindir@/gtkmmtemp %U
+Categories=GNOME;GTK;Utility
