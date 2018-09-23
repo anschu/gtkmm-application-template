@@ -1,0 +1,32 @@
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+#include <string>
+
+namespace projectdefinitions {
+static std::string getProjectName() {
+    return "@PROJECT_NAME@";
+}
+
+static std::string getProjectVersion() {
+    return "@PROJECT_VERSION@";
+}
+
+static std::string getApplicationID() {
+    return "@APPLICATION_ID@";
+}
+
+static std::string getApplicationPrefix() {
+    return "@APPLICATION_PREFIX@";
+}
+
+static std::string getGeneratedFilesDirectory() {
+    return "@GENERATED_FILES_DIR@";
+}
+
+static std::string getGeneratedDataDirectory() {
+    return "@GENERATED_DATA_DIR@";
+}
+}
+
+#endif  // CONFIG_H_IN

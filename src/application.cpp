@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-Application::Application() : Gtk::Application("org.gtkmm.template.application") {
+#include "projectdefinitions.h"
+
+Application::Application() : Gtk::Application(projectdefinitions::getApplicationID() + ".application") {
 }
 
 Application::~Application() {
@@ -39,7 +41,7 @@ void Application::on_startup() {
 
     auto builder = Gtk::Builder::create();
     try {
-        builder->add_from_resource("/org/gtkmm/template/ui/menu.glade");
+        builder->add_from_resource(projectdefinitions::getApplicationPrefix() + "ui/menu.glade");
     } catch (const Glib::Error &ex) {
         std::cerr << "Application::on_startup(): " << ex.what() << std::endl;
         return;

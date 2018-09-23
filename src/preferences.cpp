@@ -1,5 +1,7 @@
 #include "preferences.h"
 
+#include "projectdefinitions.h"
+
 Preferences::Preferences(BaseObjectType *cobject, const Glib::RefPtr<Gtk::Builder> &builder)
     : Gtk::Dialog(cobject), builder(builder), settings(nullptr), comboBoxText(nullptr), checkButton(nullptr) {
     builder->get_widget("comboBoxText", comboBoxText);
@@ -12,7 +14,7 @@ Preferences::Preferences(BaseObjectType *cobject, const Glib::RefPtr<Gtk::Builde
         throw std::runtime_error("No \"checkButton\" object in preferences.glade");
     }
 
-    settings = Gio::Settings::create("org.gtkmm.template");
+    settings = Gio::Settings::create(projectdefinitions::getApplicationID());
     settings->bind("first", comboBoxText->property_active_id());
     settings->bind("second", checkButton->property_active());
 }
@@ -21,7 +23,7 @@ Preferences::~Preferences() {
 }
 
 Preferences *Preferences::create(Gtk::Window &parent) {
-    auto builder = Gtk::Builder::create_from_resource("/org/gtkmm/template/ui/preferences.glade");
+    auto builder = Gtk::Builder::create_from_resource(projectdefinitions::getApplicationPrefix() + "ui/preferences.glade");
 
     Preferences *prefsDialog = nullptr;
     builder->get_widget_derived("prefsDialog", prefsDialog);
