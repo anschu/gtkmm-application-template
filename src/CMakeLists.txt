@@ -19,3 +19,5 @@ compile_resources(
     menu.glade
     preferences.glade
     )
+
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
