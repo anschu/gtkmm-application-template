@@ -4,7 +4,7 @@ Simple template to write Gtkmm applications using CMake and Glade
 
 ## Requirements
 * Gtkmm-3.0
-* CMake-3.2
+* CMake-3.2 or higher
 * Glade (optional)
 
 ## Getting started
@@ -37,3 +37,6 @@ sudo make install
 ```bash
 sudo ./uninstall.sh
 ```
+
+## References
+Most parts used in the source code are copied from the GNOME Developer Guide [Programming with gtkmm3](https://developer.gnome.org/gtkmm-tutorial/stable/ "Programming with gtkmm3"), especially chapter [Building applications](https://developer.gnome.org/gtkmm-tutorial/stable/chapter-building-applications.html.en "Building applications").
