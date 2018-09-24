@@ -9,9 +9,11 @@ function init_project {
 	CURRENT_DIR="$(echo "${PWD##*/}")"
 	mv ../$CURRENT_DIR ../${ID_PARTS[-1]}
 
-	rm -r .git*
-	rm README.md
-	rm init.sh
+	rm -rf .git*
+	rm -f README.md
+	rm -f init.sh
+
+	cd ../${ID_PARTS[-1]}
 
 	echo "Project initialized as '${1}'"
 }
