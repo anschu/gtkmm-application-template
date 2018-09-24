@@ -13,8 +13,6 @@ function init_project {
 	rm -f README.md
 	rm -f init.sh
 
-	cd ../${ID_PARTS[-1]}
-
 	echo "Project initialized as '${1}'"
 }
 
@@ -28,4 +26,4 @@ then
 fi
 
 init_project $PROJECT_ID
-
+cd ../
