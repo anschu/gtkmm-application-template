@@ -26,4 +26,3 @@ then
 fi
 
 init_project $PROJECT_ID
-cd ../
