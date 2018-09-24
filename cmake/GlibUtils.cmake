@@ -43,5 +43,5 @@ macro(compile_schemas GSCHEMA_XML)
         DEPENDS ${GSCHEMA_XML} ${SCHEMAS}
         COMMENT "Generating ${OUTPUT}..."
         )
-    add_custom_target(GSCHEMA ALL DEPENDS ${OUTPUT})
+    add_custom_target(gschemas.compiled ALL DEPENDS ${OUTPUT})
 endmacro()
