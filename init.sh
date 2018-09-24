@@ -10,16 +10,20 @@ function init_project {
 	mv ../$CURRENT_DIR ../${ID_PARTS[-1]}
 
 	rm -r .git*
+	rm README.md
+	rm init.sh
+
 	echo "Project initialized as '${1}'"
 }
 
-read -p "ProjectID [default: de.anschu.GtkmmApplicationTemplate]: " PROJECT_ID
+DEFAULT_PROJECT_ID="org.gtkmm.ApplicationTemplate"
+
+read -p "ProjectID [default: $DEFAULT_PROJECT_ID]: " PROJECT_ID
 
 if [[ ! $PROJECT_ID ]]
 then
-	PROJECT_ID="de.anschu.GtkmmApplicationTemplate"
+	PROJECT_ID=$DEFAULT_PROJECT_ID
 fi
 
 init_project $PROJECT_ID
-
 
