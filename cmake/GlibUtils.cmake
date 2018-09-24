@@ -2,7 +2,7 @@ macro(compile_resources OUTPUT)
     find_program(GLIB_RESOURCE_COMPILER NAMES glib-compile-resources REQUIRED)
 
     set(GRESOURCE_FILE ${GENERATED_DATA_DIR}/${PROJECT_NAME}.gresource.xml)
-    set(WORK_DIR ${CMAKE_SOURCE_DIR}/data)
+    set(WORK_DIR ${PROJECT_SOURCE_DIR}/data)
 
     if(${ARGC} GREATER 1)
         foreach(arg IN ITEMS ${ARGN})
@@ -23,7 +23,7 @@ endmacro()
 macro(compile_schemas GSCHEMA_XML)
     find_program(GLIB_SCHEMA_COMPILER NAMES glib-compile-schemas REQUIRED)
 
-    set(WORK_DIR ${CMAKE_SOURCE_DIR}/data)
+    set(WORK_DIR ${PROJECT_SOURCE_DIR}/data)
 
     if(${ARGC} GREATER 1)
         foreach(arg IN ITEMS ${ARGN})
@@ -32,7 +32,7 @@ macro(compile_schemas GSCHEMA_XML)
         endforeach()
     endif()
 
-    set(OUTPUT_DIR ${CMAKE_BINARY_DIR}/generated/data)
+    set(OUTPUT_DIR ${PROJECT_BINARY_DIR}/generated/data)
     set(OUTPUT ${OUTPUT_DIR}/gschemas.compiled)
     add_custom_command(
         OUTPUT ${OUTPUT}
