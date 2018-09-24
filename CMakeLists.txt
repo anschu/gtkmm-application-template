@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(GtkmmApplicationTemplate VERSION 1.0)
+project(_PROJECT_NAME_ VERSION 1.0)
 
-set(APPLICATION_ID "de.anschu.GtkmmApplicationTemplate")
+set(APPLICATION_ID "_APPLICATION_ID_")
 string(REPLACE "." "/" APPLICATION_PREFIX "/${APPLICATION_ID}/")
 
 list(INSERT CMAKE_MODULE_PATH 0 ${PROJECT_SOURCE_DIR}/cmake)
