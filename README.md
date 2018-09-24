@@ -8,12 +8,15 @@ Simple template to write Gtkmm applications using CMake and Glade
 * Glade (optional)
 
 ## Getting started
-1. Clone the repository with your preferred project-name:
+1. Clone repository with preferred project name:
+`git clone git@github.com:anschu/gtkmm-application-template.git PROJECT_NAME`
+
+2. Run initialization script located in the project root...
 ```bash
-git clone https://github.com/anschu/gtkmm-application-template.git $PROJECT_NAME$
-cd $PROJECT_NAME$/
+cd PROJECT_NAME/
+sh init.sh
 ```
-2. Change the default project-name `project(`**GtkmmApplicationTemplate**` VERSION 1.0)`  and application-ID `set(APPLICATION_ID "`**de.anschu**`.${PROJECT_NAME}")`in `CMakeLists.txt` located in the project root.
+...and choose your application-ID e.g. "org.gtkmm.MyApplication".
 
 3. Write your code.
 
