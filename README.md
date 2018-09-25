@@ -16,7 +16,7 @@ git clone git@github.com:anschu/gtkmm-application-template.git PROJECT_NAME
 2. Run initialization script located in the project root...
 ```bash
 cd PROJECT_NAME/
-sh init.sh
+bash init.sh
 ```
 ...and choose your application-ID e.g. "org.gtkmm.MyApplication".
 
