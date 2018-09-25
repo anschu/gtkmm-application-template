@@ -5,10 +5,7 @@ function init_project {
 
 	sed -i -e "s/_APPLICATION_ID_/${1}/g" CMakeLists.txt
 	sed -i -e "s/_PROJECT_NAME_/${ID_PARTS[-1]}/g" CMakeLists.txt
-
-	CURRENT_DIR="$(echo "${PWD##*/}")"
-	mv ../$CURRENT_DIR ../${ID_PARTS[-1]}
-
+	
 	rm -rf .git*
 	rm -f README.md
 	rm -f init.sh
