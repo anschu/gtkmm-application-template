@@ -27,6 +27,7 @@ bash init.sh
 mkdir build
 cd build/
 cmake ..
+make
 ```
 5. Installation:
 ```bash
